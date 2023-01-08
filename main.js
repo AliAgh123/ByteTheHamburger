@@ -1,6 +1,5 @@
-import './style.css';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { OrbitControls } from 'three/addons/controls/OrbitControls';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 
@@ -30,7 +29,7 @@ var model;
 let mixer;
 loader.load(
 	// resource URL
-	'/withanimation.glb',
+	'/models/withanimation.glb',
 	function ( gltf ) {
     gltf.scene.scale.set(4,4,4);
     gltf.scene.position.set(0, -3, 0);
@@ -73,20 +72,6 @@ scene.add(pointLight, ambientLight);
 
 // const controls = new OrbitControls(camera, renderer.domElement);
 
-
-// Scroll Animation
-
-// function moveCamera() {
-//   const t = document.body.getBoundingClientRect().top;
- 
-
-//   camera.position.z = t * -0.01;
-//   camera.position.x = t * -0.0002;
-//   camera.rotation.y = t * -0.0002;
-// }
-
-// document.body.onscroll = moveCamera;
-// moveCamera();
 
 // Animation Loop
 

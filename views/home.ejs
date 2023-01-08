@@ -1,0 +1,146 @@
+<%- include("partials/header") %>
+<section class="colored-section" id="title">
+	<div class="container-fluid">
+		<!-- Title -->
+		<div class="row">
+			<div class="col-lg-6">
+				<h1 class="big-heading">
+					Order and eat one of the most delicious burgers.
+				</h1>
+				<button type="button" class="btn btn-dark btn-lg download-button">
+					Order Now <i class="fa-solid fa-arrow-right"></i>
+				</button>
+			</div>
+			<div class="col-lg-6 phone-column-image">
+				<canvas id="bg" style="width: 100%"> </canvas>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Features -->
+
+<section class="white-section" id="features">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-4 feature-box">
+				<i class="fa-solid fa-face-grin-stars fa-4x feature-icon"></i>
+				<h3 class="feature-title">Crusty bread</h3>
+				<p class="feature-caption">
+					A well baked bread that Cruuuunch perfectly!
+				</p>
+			</div>
+			<div class="col-lg-4 feature-box">
+				<i class="fa-solid fa-burger fa-4x feature-icon"></i>
+				<h3 class="feature-title">Delicious beef slice</h3>
+				<p class="feature-caption">
+					The beef slices are well cooked to be super delicious!
+				</p>
+			</div>
+			<div class="col-lg-4 feature-box">
+				<i class="fa-solid fa-cheese fa-4x feature-icon"></i>
+				<h3 class="feature-title">Cheeesy</h3>
+				<p class="feature-caption">The cheese in the ham is super cheeeeesy.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Testimonials -->
+
+<section class="colored-section" id="testimonials">
+	<div id="testimonial-carousel" class="carousel slide" data-bs-ride="false">
+		<div class="carousel-indicators">
+			<button
+				type="button"
+				data-bs-target="#testimonial-carousel"
+				data-bs-slide-to="0"
+				class="active"
+				aria-current="true"
+				aria-label="Slide 1"
+			></button>
+			<button
+				type="button"
+				data-bs-target="#testimonial-carousel"
+				data-bs-slide-to="1"
+				aria-label="Slide 2"
+			></button>
+			<button
+				type="button"
+				data-bs-target="#testimonial-carousel"
+				data-bs-slide-to="2"
+				aria-label="Slide 3"
+			></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active container-fluid">
+				<h2 class="testimonial-text">
+					I no longer need to think of my launch! I just need to order it from
+					ByteTheBurger!
+				</h2>
+				<img
+					class="testimonial-image"
+					src="/images/dog-img.jpg"
+					alt="Ali-profile"
+				/>
+				<em>Ali, Beirut</em>
+			</div>
+			<div class="carousel-item container-fluid">
+				<h2 class="testimonial-text">
+					I've ordered a burger from ByteTheBurger, it is the best thing I've
+					done in my life!
+				</h2>
+				<img
+					class="testimonial-image"
+					src="/images/lady-img.jpg"
+					alt="Abbass-profile"
+				/>
+				<em>Abbass, Beirut</em>
+			</div>
+			<div class="carousel-item container-fluid">
+				<h2 class="testimonial-text">
+					The service in ByteTheBurger is professional, they are friendly in
+					handling orders!
+				</h2>
+				<img
+					class="testimonial-image"
+					src="/images/lady-img.jpg"
+					alt="Jeff-profile"
+				/>
+				<em>Jeff, Illinois </em>
+			</div>
+		</div>
+		<button
+			class="carousel-control-prev"
+			type="button"
+			data-bs-target="#testimonial-carousel"
+			data-bs-slide="prev"
+		>
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button
+			class="carousel-control-next"
+			type="button"
+			data-bs-target="#testimonial-carousel"
+			data-bs-slide="next"
+		>
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+</section>
+
+<!-- Call to Action -->
+
+<section class="colored-section" id="cta">
+	<div class="container-fluid">
+		<h3 class="big-heading">
+			Save your time and Order now a delicious hamburger from ByteTheBurger.
+		</h3>
+		<button type="button" class="btn btn-dark btn-lg download-button">
+			Order Now <i class="fa-solid fa-arrow-right"></i>
+		</button>
+	</div>
+</section>
+<%- include("partials/footer") %>

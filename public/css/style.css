@@ -18,6 +18,9 @@ p {
 .container-fluid {
 	padding: 7% 15%;
 }
+.container-fluid-nav{
+	padding: 2% 15%;
+}
 /* Sections */
 .colored-section {
 	background-color: #FFA529;
@@ -108,27 +111,8 @@ p {
 	margin: 20px;
 }
 
-#press {
-	background-color: #ffa629a8;
-	padding-bottom: 3%;
-}
-.press-logo {
-	width: 15%;
-	margin: 20px 20px 50px;
-}
 .carousel-indicators {
 	bottom: 10px;
-}
-/* Pricing Section */
-#pricing {
-	padding: 100px;
-}
-.price-heading {
-	font-size: 3rem;
-	line-height: 1.5;
-}
-.pricing-column {
-	padding: 3% 2%;
 }
 
 /* Footer Section */

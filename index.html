@@ -26,7 +26,7 @@
 
 		<!-- CSS Stylesheets -->
 
-		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="/css/style.css" />
 
 		<!-- Font Awesome -->
 
@@ -162,7 +162,7 @@
 						</h2>
 						<img
 							class="testimonial-image"
-							src="public/images/dog-img.jpg"
+							src="/images/dog-img.jpg"
 							alt="Ali-profile"
 						/>
 						<em>Ali, Beirut</em>
@@ -174,7 +174,7 @@
 						</h2>
 						<img
 							class="testimonial-image"
-							src="public/images/lady-img.jpg"
+							src="/images/lady-img.jpg"
 							alt="Abbass-profile"
 						/>
 						<em>Abbass, Beirut</em>
@@ -186,7 +186,7 @@
 						</h2>
 						<img
 							class="testimonial-image"
-							src="public/images/lady-img.jpg"
+							src="/images/lady-img.jpg"
 							alt="Jeff-profile"
 						/>
 						<em>Jeff, Illinois </em>
@@ -213,46 +213,12 @@
 			</div>
 		</section>
 
-		<!-- Press
-
-		<section class="colored-section" id="press">
-			<img
-				class="press-logo"
-				src="public/images/TechCrunch.png"
-				alt="tc-logo"
-			/>
-			<img class="press-logo" src="public/images/tnw.png" alt="tnw-logo" />
-			<img
-				class="press-logo"
-				src="public/images/bizinsider.png"
-				alt="biz-insider-logo"
-			/>
-			<img
-				class="press-logo"
-				src="public/images/mashable.png"
-				alt="mashable-logo"
-			/>
-		</section> -->
-
 		<!-- Call to Action -->
-
-		<section class="white-section" id="cta">
-			<div class="container-fluid">
-				<h3 class="big-heading">
-					Save your time and Order now a delicious hamburger from ByteTheBurger.
-				</h3>
-				<button type="button" class="btn btn-dark btn-lg download-button">
-					Order Now <i class="fa-solid fa-arrow-right"></i>
-				</button>
-			</div>
-		</section>
-
-		<!-- Order form -->
 
 		<section class="colored-section" id="cta">
 			<div class="container-fluid">
 				<h3 class="big-heading">
-					Fill the form to order Now
+					Save your time and Order now a delicious hamburger from ByteTheBurger.
 				</h3>
 				<button type="button" class="btn btn-dark btn-lg download-button">
 					Order Now <i class="fa-solid fa-arrow-right"></i>
@@ -271,7 +237,21 @@
 				<p>© Copyright 2023 ByteTheBurger</p>
 			</div>
 		</footer>
-		<script type="module" src="/main.js"></script>
-		<script type="module" src="/main2.js"></script>
+
+		<script
+			async
+			src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"
+		></script>
+
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "https://unpkg.com/three@0.148/build/three.module.js",
+					"three/addons/": "https://unpkg.com/three@0.148/examples/jsm/"
+				}
+			}
+		</script>
+		<script type="module" src="/dir/main.js"></script>
+		<!-- <script type="module" src="/main2.js"></script> -->
 	</body>
 </html>
