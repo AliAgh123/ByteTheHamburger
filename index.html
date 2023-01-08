@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Byte The Burger</title>
+		<!-- Google Fonts -->
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Bootstrap CSS Stylesheets -->
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+			crossorigin="anonymous"
+		/>
+
+		<!-- CSS Stylesheets -->
+
+		<link rel="stylesheet" href="css/style.css" />
+
+		<!-- Font Awesome -->
+
+		<script
+			src="https://kit.fontawesome.com/bf5071f3ea.js"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- Bootstrap scripts -->
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<section class="colored-section" id="title">
+			<div class="container-fluid">
+				<!-- Nav Bar -->
+				<div class="navbar navbar-expand-lg navbar-dark">
+					<a class="navbar-brand" href=""
+						>ByteTheBurger <i class="fas fa-hamburger"></i
+					></a>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarTogglerDemo01"
+						aria-controls="navbarTogglerDemo01"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+						<ul class="navbar-nav ms-auto">
+							<li class="nav-item">
+								<a class="nav-link" href="#footer">Contact</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#pricing">About Us</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#cta">Order Now</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Title -->
+				<div class="row">
+					<div class="col-lg-6">
+						<h1 class="big-heading">
+							Order and eat one of the most delicious burgers.
+						</h1>
+						<button type="button" class="btn btn-dark btn-lg download-button">
+							Order Now <i class="fa-solid fa-arrow-right"></i>
+						</button>
+					</div>
+					<div class="col-lg-6 phone-column-image">
+						<canvas id="bg" style="width: 100%"> </canvas>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Features -->
+
+		<section class="white-section" id="features">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-4 feature-box">
+						<i class="fa-solid fa-face-grin-stars fa-4x feature-icon"></i>
+						<h3 class="feature-title">Crusty bread</h3>
+						<p class="feature-caption">
+							A well baked bread that Cruuuunch perfectly!
+						</p>
+					</div>
+					<div class="col-lg-4 feature-box">
+						<i class="fa-solid fa-burger fa-4x feature-icon"></i>
+						<h3 class="feature-title">Delicious beef slice</h3>
+						<p class="feature-caption">
+							The beef slices are well cooked to be super delicious!
+						</p>
+					</div>
+					<div class="col-lg-4 feature-box">
+						<i class="fa-solid fa-cheese fa-4x feature-icon"></i>
+						<h3 class="feature-title">Cheeesy</h3>
+						<p class="feature-caption">
+							The cheese in the ham is super cheeeeesy.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Testimonials -->
+
+		<section class="colored-section" id="testimonials">
+			<div
+				id="testimonial-carousel"
+				class="carousel slide"
+				data-bs-ride="false"
+			>
+				<div class="carousel-indicators">
+					<button
+						type="button"
+						data-bs-target="#testimonial-carousel"
+						data-bs-slide-to="0"
+						class="active"
+						aria-current="true"
+						aria-label="Slide 1"
+					></button>
+					<button
+						type="button"
+						data-bs-target="#testimonial-carousel"
+						data-bs-slide-to="1"
+						aria-label="Slide 2"
+					></button>
+					<button
+						type="button"
+						data-bs-target="#testimonial-carousel"
+						data-bs-slide-to="2"
+						aria-label="Slide 3"
+					></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active container-fluid">
+						<h2 class="testimonial-text">
+							I no longer need to think of my launch! I just need to order it
+							from ByteTheBurger!
+						</h2>
+						<img
+							class="testimonial-image"
+							src="public/images/dog-img.jpg"
+							alt="Ali-profile"
+						/>
+						<em>Ali, Beirut</em>
+					</div>
+					<div class="carousel-item container-fluid">
+						<h2 class="testimonial-text">
+							I've ordered a burger from ByteTheBurger, it is the best thing
+							I've done in my life!
+						</h2>
+						<img
+							class="testimonial-image"
+							src="public/images/lady-img.jpg"
+							alt="Abbass-profile"
+						/>
+						<em>Abbass, Beirut</em>
+					</div>
+					<div class="carousel-item container-fluid">
+						<h2 class="testimonial-text">
+							The service in ByteTheBurger is professional, they are friendly in
+							handling orders!
+						</h2>
+						<img
+							class="testimonial-image"
+							src="public/images/lady-img.jpg"
+							alt="Jeff-profile"
+						/>
+						<em>Jeff, Illinois </em>
+					</div>
+				</div>
+				<button
+					class="carousel-control-prev"
+					type="button"
+					data-bs-target="#testimonial-carousel"
+					data-bs-slide="prev"
+				>
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button
+					class="carousel-control-next"
+					type="button"
+					data-bs-target="#testimonial-carousel"
+					data-bs-slide="next"
+				>
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</section>
+
+		<!-- Press
+
+		<section class="colored-section" id="press">
+			<img
+				class="press-logo"
+				src="public/images/TechCrunch.png"
+				alt="tc-logo"
+			/>
+			<img class="press-logo" src="public/images/tnw.png" alt="tnw-logo" />
+			<img
+				class="press-logo"
+				src="public/images/bizinsider.png"
+				alt="biz-insider-logo"
+			/>
+			<img
+				class="press-logo"
+				src="public/images/mashable.png"
+				alt="mashable-logo"
+			/>
+		</section> -->
+
+		<!-- Call to Action -->
+
+		<section class="white-section" id="cta">
+			<div class="container-fluid">
+				<h3 class="big-heading">
+					Save your time and Order now a delicious hamburger from ByteTheBurger.
+				</h3>
+				<button type="button" class="btn btn-dark btn-lg download-button">
+					Order Now <i class="fa-solid fa-arrow-right"></i>
+				</button>
+			</div>
+		</section>
+
+		<!-- Order form -->
+
+		<section class="colored-section" id="cta">
+			<div class="container-fluid">
+				<h3 class="big-heading">
+					Fill the form to order Now
+				</h3>
+				<button type="button" class="btn btn-dark btn-lg download-button">
+					Order Now <i class="fa-solid fa-arrow-right"></i>
+				</button>
+			</div>
+		</section>
+
+		<!-- Footer -->
+
+		<footer class="white-section" id="footer">
+			<div class="container-fluid">
+				<i class="social-media-icon fab fa-twitter"></i>
+				<i class="social-media-icon fab fa-facebook-f"></i>
+				<i class="social-media-icon fab fa-instagram"></i>
+				<i class="social-media-icon fas fa-envelope"></i>
+				<p>© Copyright 2023 ByteTheBurger</p>
+			</div>
+		</footer>
+		<script type="module" src="/main.js"></script>
+		<script type="module" src="/main2.js"></script>
+	</body>
+</html>
