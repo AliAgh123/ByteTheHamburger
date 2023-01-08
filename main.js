@@ -29,7 +29,7 @@ var model;
 let mixer;
 loader.load(
 	// resource URL
-	'/withanimation.glb',
+	'/models/withanimation.glb',
 	function ( gltf ) {
     gltf.scene.scale.set(4,4,4);
     gltf.scene.position.set(0, -3, 0);
