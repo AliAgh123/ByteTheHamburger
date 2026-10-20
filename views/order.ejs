@@ -1,0 +1,32 @@
+<%- include("partials/header") %>
+<main class="track" data-order="<%= order.code %>">
+	<p class="eyebrow">Order #<%= order.number %></p>
+	<% const delivery = order.fulfilment === "delivery"; %>
+	<h1 class="display track-title" data-status-title><%- titles[order.status] %></h1>
+	<ol class="track-steps" data-status="<%= order.status %>">
+		<li data-step="received"><span>01</span>Received</li>
+		<li data-step="cooking"><span>02</span>Cooking</li>
+		<% if (delivery) { %>
+		<li data-step="out_for_delivery"><span>03</span>On the way</li>
+		<li data-step="delivered"><span>04</span>Delivered</li>
+		<% } else { %>
+		<li data-step="ready"><span>03</span>Ready</li>
+		<% } %>
+	</ol>
+	<p class="track-where">
+		<%= order.name %>,
+		<% if (delivery) { %>we deliver to <%= order.address %> and call <%= order.phone %> if needed.<% } %>
+		<% if (order.fulfilment === "table") { %>we bring it to table <%= order.tableNumber %>.<% } %>
+		<% if (order.fulfilment === "pickup") { %>collect it at the counter.<% } %>
+		This page updates by itself.
+	</p>
+	<ul class="track-lines">
+		<% order.items.forEach((item) => { %>
+		<li><span><%= item.quantity %> × <%= item.name %></span><span>$<%= (item.quantity * item.unitPriceCents / 100).toFixed(2) %></span></li>
+		<% }) %>
+		<% if (delivery) { %><li><span>Delivery</span><span><%= order.deliveryFeeCents ? "$" + (order.deliveryFeeCents / 100).toFixed(2) : "Free" %></span></li><% } %>
+		<li class="track-total"><span>Total, <%= order.payment === "cash_on_delivery" ? "cash on delivery" : "cash at the counter" %></span><span>$<%= (order.totalCents / 100).toFixed(2) %></span></li>
+	</ul>
+	<% if (order.note) { %><p class="track-note">Note: <%= order.note %></p><% } %>
+</main>
+<%- include("partials/footer", { scripts: ["/js/order.js"] }) %>

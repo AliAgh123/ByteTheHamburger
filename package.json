@@ -1,16 +1,21 @@
 {
   "name": "bytetheburger",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "Burger restaurant site with ordering, live order status and a kitchen screen.",
   "main": "app.js",
+  "private": true,
+  "engines": {
+    "node": ">=22.13"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "node --watch app.js",
+    "test": "node --test"
   },
   "author": "Ali Abdel Ghaffar + Abbas Naim",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^3.1.8",
-    "express": "^4.18.2",
-    "three": "^0.148.0"
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
   }
 }
