@@ -1,21 +1,18 @@
-const express = require("express");
-const ejs = require("ejs");
+const path = require("node:path");
+const { openDatabase } = require("./src/db");
+const { createApp } = require("./src/app");
 
-const app = express();
+const production = process.env.NODE_ENV === "production";
+let kitchenPassword = process.env.KITCHEN_PASSWORD;
+if (!kitchenPassword && !production) {
+    kitchenPassword = "kitchen";
+    console.warn('KITCHEN_PASSWORD is not set; the kitchen screen uses "kitchen" for local development.');
+}
 
-app.use(express.static("public"));
-app.set("view engine", "ejs");
-app.use("/dir/", express.static(__dirname));
+const db = openDatabase(process.env.DATABASE_PATH || path.join(__dirname, "data", "bytetheburger.db"));
+const app = createApp({ db, kitchenPassword });
 
-app.get("/", (req, res) => {
-    // res.sendFile(__dirname + "/index.html");
-    res.render("home");
-});
-
-app.get("/about", (req, res) => {
-    res.render("about");
-})
-
-app.listen(3000, () => {
-    console.log("Server started on port 3000.");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server started on port ${port}.`);
 });

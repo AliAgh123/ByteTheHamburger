@@ -1,0 +1,14 @@
+<%- include("partials/header") %>
+<main class="kitchen" data-kitchen>
+	<div class="kitchen-head">
+		<h1 class="display">Kitchen</h1>
+		<p class="kitchen-live" data-kitchen-live>Connecting…</p>
+	</div>
+	<div class="kitchen-board">
+		<section data-column="received"><h2>Received <span data-count>0</span></h2><div class="kitchen-cards"></div></section>
+		<section data-column="cooking"><h2>Cooking <span data-count>0</span></h2><div class="kitchen-cards"></div></section>
+		<section data-column="ready"><h2>Ready <span data-count>0</span></h2><div class="kitchen-cards"></div></section>
+		<section data-column="out_for_delivery"><h2>On the way <span data-count>0</span></h2><div class="kitchen-cards"></div></section>
+	</div>
+</main>
+<%- include("partials/footer", { scripts: ["/js/kitchen.js"] }) %>

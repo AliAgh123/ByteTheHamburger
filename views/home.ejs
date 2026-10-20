@@ -1,146 +1,108 @@
 <%- include("partials/header") %>
-<section class="colored-section" id="title">
-	<div class="container-fluid">
-		<!-- Title -->
-		<div class="row">
-			<div class="col-lg-6">
-				<h1 class="big-heading">
-					Order and eat one of the most delicious burgers.
-				</h1>
-				<button type="button" class="btn btn-dark btn-lg download-button">
-					Order Now <i class="fa-solid fa-arrow-right"></i>
-				</button>
-			</div>
-			<div class="col-lg-6 phone-column-image">
-				<canvas id="bg" style="width: 100%"> </canvas>
+
+<div class="loader" aria-hidden="true">
+	<span class="loader-count">0</span>
+</div>
+
+<section class="build" id="build">
+	<div class="build-stage">
+		<div class="build-glow" aria-hidden="true"></div>
+		<div class="build-words" aria-hidden="true">
+			<div class="build-word" data-dir="-1">Byte the burger Byte the burger</div>
+			<div class="build-word build-word-outline" data-dir="1">Six layers six layers six layers</div>
+		</div>
+
+		<canvas class="build-canvas" aria-label="A burger that builds itself, layer by layer, as you scroll"></canvas>
+		<div class="build-tags" aria-hidden="true"></div>
+
+		<div class="build-intro">
+			<p class="eyebrow">Smash burgers, free delivery</p>
+			<h1 class="display">
+				<span class="line"><span>Six layers.</span></span>
+				<span class="line"><span><em>One</em> bite.</span></span>
+			</h1>
+			<p class="lede">Scroll to build it. Every layer is made fresh when you order.</p>
+		</div>
+
+		<div class="build-outro">
+			<p class="eyebrow">The Byte, $9.50</p>
+			<h2 class="display">Ready in <em>8 minutes.</em></h2>
+			<div class="actions">
+				<a class="btn" href="#menu">Order delivery</a>
+				<a class="btn btn-ghost" href="#menu">See the menu</a>
 			</div>
 		</div>
+
+		<div class="build-hud">
+			<div class="hud-count"><span class="hud-now">01</span><span class="hud-total">/ 06</span></div>
+			<div class="hud-name">Toasted bottom bun</div>
+			<div class="hud-bar"><span></span></div>
+		</div>
+
+		<div class="scroll-cue" aria-hidden="true"><span></span>Scroll</div>
 	</div>
 </section>
 
-<!-- Features -->
-
-<section class="white-section" id="features">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-lg-4 feature-box">
-				<i class="fa-solid fa-face-grin-stars fa-4x feature-icon"></i>
-				<h3 class="feature-title">Crusty bread</h3>
-				<p class="feature-caption">
-					A well baked bread that Cruuuunch perfectly!
-				</p>
-			</div>
-			<div class="col-lg-4 feature-box">
-				<i class="fa-solid fa-burger fa-4x feature-icon"></i>
-				<h3 class="feature-title">Delicious beef slice</h3>
-				<p class="feature-caption">
-					The beef slices are well cooked to be super delicious!
-				</p>
-			</div>
-			<div class="col-lg-4 feature-box">
-				<i class="fa-solid fa-cheese fa-4x feature-icon"></i>
-				<h3 class="feature-title">Cheeesy</h3>
-				<p class="feature-caption">The cheese in the ham is super cheeeeesy.</p>
-			</div>
-		</div>
+<section class="ticker" aria-hidden="true">
+	<div class="ticker-track">
+		<span>Free delivery</span><span>Grilled to order</span><span>Cash on delivery</span><span>Pickup in 8 minutes</span>
+		<span>Free delivery</span><span>Grilled to order</span><span>Cash on delivery</span><span>Pickup in 8 minutes</span>
 	</div>
 </section>
 
-<!-- Testimonials -->
-
-<section class="colored-section" id="testimonials">
-	<div id="testimonial-carousel" class="carousel slide" data-bs-ride="false">
-		<div class="carousel-indicators">
-			<button
-				type="button"
-				data-bs-target="#testimonial-carousel"
-				data-bs-slide-to="0"
-				class="active"
-				aria-current="true"
-				aria-label="Slide 1"
-			></button>
-			<button
-				type="button"
-				data-bs-target="#testimonial-carousel"
-				data-bs-slide-to="1"
-				aria-label="Slide 2"
-			></button>
-			<button
-				type="button"
-				data-bs-target="#testimonial-carousel"
-				data-bs-slide-to="2"
-				aria-label="Slide 3"
-			></button>
-		</div>
-		<div class="carousel-inner">
-			<div class="carousel-item active container-fluid">
-				<h2 class="testimonial-text">
-					I no longer need to think of my launch! I just need to order it from
-					ByteTheBurger!
-				</h2>
-				<img
-					class="testimonial-image"
-					src="/images/dog-img.jpg"
-					alt="Ali-profile"
-				/>
-				<em>Ali, Beirut</em>
+<section class="menu" id="menu">
+	<div class="section-head">
+		<p class="eyebrow">Menu</p>
+		<h2 class="display reveal-words">Short menu. <em>Done well.</em></h2>
+	</div>
+	<div class="menu-grid">
+		<% menu.forEach((item, i) => { %>
+		<article class="menu-card" data-id="<%= item.id %>" data-name="<%= item.name %>" data-price="<%= item.priceCents %>">
+			<div class="menu-card-top">
+				<span class="menu-num"><%= String(i + 1).padStart(2, "0") %></span>
+				<span class="menu-tag"><%= item.tag %></span>
 			</div>
-			<div class="carousel-item container-fluid">
-				<h2 class="testimonial-text">
-					I've ordered a burger from ByteTheBurger, it is the best thing I've
-					done in my life!
-				</h2>
-				<img
-					class="testimonial-image"
-					src="/images/lady-img.jpg"
-					alt="Abbass-profile"
-				/>
-				<em>Abbass, Beirut</em>
+			<h3><%= item.name %></h3>
+			<p><%= item.description %></p>
+			<div class="menu-card-bottom">
+				<span class="menu-price">$<%= item.price %></span>
+				<button class="menu-add" type="button" aria-label="Add <%= item.name %> to order">+</button>
 			</div>
-			<div class="carousel-item container-fluid">
-				<h2 class="testimonial-text">
-					The service in ByteTheBurger is professional, they are friendly in
-					handling orders!
-				</h2>
-				<img
-					class="testimonial-image"
-					src="/images/lady-img.jpg"
-					alt="Jeff-profile"
-				/>
-				<em>Jeff, Illinois </em>
-			</div>
-		</div>
-		<button
-			class="carousel-control-prev"
-			type="button"
-			data-bs-target="#testimonial-carousel"
-			data-bs-slide="prev"
-		>
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Previous</span>
-		</button>
-		<button
-			class="carousel-control-next"
-			type="button"
-			data-bs-target="#testimonial-carousel"
-			data-bs-slide="next"
-		>
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Next</span>
-		</button>
+		</article>
+		<% }) %>
 	</div>
 </section>
 
-<!-- Call to Action -->
-
-<section class="colored-section" id="cta">
-	<div class="container-fluid">
-		<h3 class="big-heading">
-			Save your time and Order now a delicious hamburger from ByteTheBurger.
-		</h3>
-		<button type="button" class="btn btn-dark btn-lg download-button">
-			Order Now <i class="fa-solid fa-arrow-right"></i>
-		</button>
+<section class="how" id="how">
+	<div class="section-head">
+		<p class="eyebrow">How it works</p>
+		<h2 class="display reveal-words">From order to <em>your hands.</em></h2>
 	</div>
+	<ol class="how-steps">
+		<li class="how-step">
+			<span class="how-num">01</span>
+			<h3>Order</h3>
+			<p>Order here for free delivery, for pickup, or from your table with the QR code.</p>
+		</li>
+		<li class="how-step">
+			<span class="how-num">02</span>
+			<h3>We grill it</h3>
+			<p>Your order goes straight to the kitchen screen. Nothing is cooked before you order.</p>
+		</li>
+		<li class="how-step">
+			<span class="how-num">03</span>
+			<h3>Get it</h3>
+			<p>Follow your order live. Pay the driver in cash, or pay at the counter.</p>
+		</li>
+	</ol>
+	<div class="how-line" aria-hidden="true"><span></span></div>
 </section>
+
+<section class="order" id="order">
+	<p class="eyebrow">Hungry yet?</p>
+	<h2 class="order-title display"><span data-speed="-0.4">Order</span> <em data-speed="0.4">now.</em></h2>
+	<a class="btn btn-large" href="#menu">Start your order</a>
+</section>
+
+<%- include("partials/cart") %>
 <%- include("partials/footer") %>

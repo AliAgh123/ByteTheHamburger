@@ -1,0 +1,54 @@
+<button class="cart-button" type="button" data-cart-open hidden>
+	<span>Your order</span>
+	<span class="cart-count" data-cart-count>0</span>
+	<span data-cart-total>$0.00</span>
+</button>
+
+<div class="cart" data-cart hidden>
+	<div class="cart-backdrop" data-cart-close></div>
+	<aside class="cart-panel" data-lenis-prevent role="dialog" aria-modal="true" aria-labelledby="cart-title">
+		<div class="cart-head">
+			<h2 id="cart-title" class="display">Your order</h2>
+			<button class="cart-x" type="button" data-cart-close aria-label="Close">×</button>
+		</div>
+		<ul class="cart-lines" data-cart-lines></ul>
+		<form class="cart-form" data-cart-form>
+			<label>
+				<span>Name</span>
+				<input name="name" maxlength="40" required autocomplete="given-name" />
+			</label>
+			<fieldset>
+				<legend>How do you want it?</legend>
+				<label class="choice"><input type="radio" name="fulfilment" value="delivery" checked /> Delivery <span class="choice-tag">Free</span></label>
+				<label class="choice"><input type="radio" name="fulfilment" value="pickup" /> Pickup at the counter</label>
+				<label class="choice"><input type="radio" name="fulfilment" value="table" /> Bring it to my table</label>
+			</fieldset>
+			<label data-delivery-field>
+				<span>Delivery address</span>
+				<input name="address" maxlength="200" autocomplete="street-address" placeholder="Street, building, floor" required />
+			</label>
+			<label data-delivery-field>
+				<span>Phone, for the driver</span>
+				<input name="phone" type="tel" maxlength="20" autocomplete="tel" inputmode="tel" required />
+			</label>
+			<label data-table-field hidden>
+				<span>Table number</span>
+				<input name="tableNumber" type="number" min="1" max="99" inputmode="numeric" />
+			</label>
+			<label>
+				<span>Note for the kitchen</span>
+				<input name="note" maxlength="200" placeholder="No onions, extra sauce" />
+			</label>
+			<div class="cart-pay">
+				<span>Payment</span>
+				<strong data-payment>Cash on delivery</strong>
+				<small data-payment-note>Pay the driver in cash. Delivery is free.</small>
+			</div>
+			<p class="cart-error" data-cart-error role="alert"></p>
+			<button class="btn btn-large cart-submit" type="submit">
+				Place order <span data-cart-total>$0.00</span>
+			</button>
+		</form>
+	</aside>
+</div>
+<script type="module" src="/js/cart.js"></script>
